@@ -1,0 +1,439 @@
+@charset "UTF-8";
+/*-----------------------------------------------
+    Importing Fonts
+------------------------------------------------*/
+@import url("../fonts/stylesheet.css");
+/*-----------------------------------------------
+    Common CSS
+------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  background: #5486d2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5486d2), color-stop(50%, #5b6ed7), to(#a6a4ed));
+  background: linear-gradient(180deg, #5486d2 0%, #5b6ed7 50%, #a6a4ed 100%);
+  background-repeat: no-repeat;
+  font-family: "Roboto";
+}
+
+.m-block {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .d-block {
+    display: none;
+  }
+  .m-block {
+    display: block;
+  }
+}
+
+/*-----------------------------------------------
+    Container (Wrapper)
+------------------------------------------------*/
+.container {
+  padding: 0px 111px;
+  margin: 0 auto;
+  background-image: url(../images/kenny/kenny-d.png), url(../images/bg/gradient.png);
+  background-position: right bottom, left bottom;
+  background-repeat: no-repeat, no-repeat;
+}
+
+@media screen and (min-height: 788px) {
+  .container {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .container {
+    padding: 0px 36px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    height: unset;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    background-size: auto, 470px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    background-image: url(../images/kenny/kenny-m.png), url(../images/bg/gradient.png);
+    background-size: 296px, auto;
+  }
+}
+
+@media screen and (max-width: 416px) {
+  .container {
+    padding: 0px 25px;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  .container {
+    background-size: 276px, auto;
+  }
+}
+
+/*-----------------------------------------------
+    Navigations 
+------------------------------------------------*/
+.navigations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigations li {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+}
+
+.navigations li::before {
+  content: "•";
+  margin: 0px 6px;
+}
+
+.navigations li:last-of-type::after {
+  content: "•";
+  margin-left: 6px;
+}
+
+@media screen and (max-width: 992px) {
+  .navigations {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navigations {
+    margin-bottom: 30px;
+  }
+  .navigations li {
+    font-size: 10px;
+  }
+  .navigations li::before {
+    margin: 0px 4px;
+  }
+  .navigations li:last-of-type::after {
+    margin-left: 4px;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  .navigations li {
+    font-size: 9.3px;
+  }
+}
+
+/*-----------------------------------------------
+    Navbar
+------------------------------------------------*/
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0px;
+}
+
+@media screen and (max-width: 576px) {
+  nav {
+    padding: 60px 0px 30px 0px;
+  }
+}
+
+@media screen and (max-width: 416px) {
+  nav {
+    padding: 40px 0px 30px 0px;
+  }
+}
+
+nav .nav-left,
+nav .nav-right {
+  width: 100px;
+}
+
+nav .nav-left .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .nav-left .logo img {
+  margin-right: 20px;
+}
+
+nav .nav-left .logo h4 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+}
+
+nav .nav-center {
+  width: 100%;
+}
+
+nav .nav-center ul {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 992px) {
+  nav .nav-center {
+    display: none;
+  }
+}
+
+nav .nav-right {
+  margin-left: auto;
+  margin-right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+nav .nav-right ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+nav .nav-right ul li {
+  margin-right: 19px;
+}
+
+nav .nav-right ul li:last-of-type {
+  margin-right: 0px;
+}
+
+/*-----------------------------------------------
+    Main (for both Desktop & Mobile) 
+------------------------------------------------*/
+.main {
+  padding: 66px 0px 147px 0px;
+  /* Main Heading */
+  /* Main Paragraph */
+  /* Subscribe Newsletter */
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    padding: 9px 0px 147px 0px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    padding: 9px 0px 280px 0px;
+  }
+}
+
+.main .main-heading h1 {
+  font-family: "Restora";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 140px;
+  line-height: 158px;
+  color: #ffffff;
+  text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.main .main-heading h1 span {
+  font-family: "Restora";
+  font-style: italic;
+}
+
+@media screen and (max-width: 1200px) {
+  .main .main-heading h1 {
+    font-size: 104px;
+    line-height: 120px;
+  }
+  .main .main-heading h1 span.life {
+    display: block;
+    font-style: normal;
+    margin-top: 20px;
+  }
+  .main .main-heading h1 span.more {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main .main-heading h1 {
+    font-weight: 300;
+    font-size: 84px;
+    line-height: 90px;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  .main .main-heading h1 {
+    font-weight: 300;
+    font-size: 74px;
+    line-height: 80px;
+  }
+}
+
+.main .main-paragraph p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+  .main .main-paragraph p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main .main-paragraph p br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main .main-paragraph p {
+    font-size: 16px;
+  }
+}
+
+.main .subscribe-newsletter {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 44px 0px 73px 0px;
+}
+
+.main .subscribe-newsletter input[type="submit"] {
+  display: block;
+  width: 451px;
+  height: 60px;
+  border: 2px solid #ffffff;
+  background: transparent;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 180px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: left;
+  padding-left: 73px;
+}
+
+.main .subscribe-newsletter .go {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  cursor: pointer;
+  top: 7px;
+  right: 8px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main .subscribe-newsletter .go svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 992px) {
+  .main .subscribe-newsletter {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main .subscribe-newsletter {
+    width: 100%;
+  }
+  .main .subscribe-newsletter input[type="submit"] {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    padding: 0px 29px 0px 0px;
+    font-size: 11.9202px;
+    line-height: 24px;
+  }
+  .main .subscribe-newsletter .go {
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  .main .subscribe-newsletter {
+    margin-top: 34px;
+    margin-bottom: 34px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=app.css.map */

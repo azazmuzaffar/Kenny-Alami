@@ -1,0 +1,352 @@
+/*-----------------------------------------------
+    Importing Fonts
+------------------------------------------------*/
+
+@import url("../fonts/stylesheet.css");
+
+/*-----------------------------------------------
+    Common CSS
+------------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  background: rgb(84, 134, 210);
+  background: linear-gradient(180deg, rgba(84, 134, 210, 1) 0%, rgba(91, 110, 215, 1) 50%, rgba(166, 164, 237, 1) 100%);
+  background-repeat: no-repeat;
+  font-family: "Roboto";
+}
+
+.m-block {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .d-block {
+    display: none;
+  }
+  .m-block {
+    display: block;
+  }
+}
+
+/*-----------------------------------------------
+    Container (Wrapper)
+------------------------------------------------*/
+
+.container {
+  padding: 0px 111px;
+  margin: 0 auto;
+  background-image: url(../images/kenny/kenny-d.png), url(../images/bg/gradient.png);
+  background-position: right bottom, left bottom;
+  background-repeat: no-repeat, no-repeat;
+  @media screen and (min-height: 788px) {
+    height: 100vh;
+  }
+  @media screen and (max-width: 1439px) {
+    padding: 0px 36px;
+  }
+  @media screen and (max-width: 992px) {
+    height: unset;
+  }
+  @media screen and (max-width: 1200px) {
+    background-size: auto, 470px;
+  }
+  @media screen and (max-width: 576px) {
+    background-image: url(../images/kenny/kenny-m.png), url(../images/bg/gradient.png);
+    background-size: 296px, auto;
+  }
+  @media screen and (max-width: 416px) {
+    padding: 0px 25px;
+  }
+  @media screen and (max-width: 394px) {
+    background-size: 276px, auto;
+  }
+}
+
+/*-----------------------------------------------
+    Navigations 
+------------------------------------------------*/
+
+.navigations {
+  display: flex;
+  align-items: center;
+  li {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    &::before {
+      content: "•";
+      margin: 0px 6px;
+    }
+    &:last-of-type {
+      &::after {
+        content: "•";
+        margin-left: 6px;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  @media screen and (max-width: 576px) {
+    margin-bottom: 30px;
+    li {
+      font-size: 10px;
+      &::before {
+        margin: 0px 4px;
+      }
+      &:last-of-type {
+        &::after {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 394px) {
+    li {
+      font-size: 9.3px;
+    }
+  }
+}
+
+/*-----------------------------------------------
+    Navbar
+------------------------------------------------*/
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 30px 0px;
+  @media screen and (max-width: 576px) {
+    padding: 60px 0px 30px 0px;
+  }
+  @media screen and (max-width: 416px) {
+    padding: 40px 0px 30px 0px;
+  }
+  .nav-left,
+  .nav-right {
+    width: 100px;
+  }
+  .nav-left {
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 20px;
+      }
+      h4 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+  .nav-center {
+    width: 100%;
+    ul {
+      width: fit-content;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  .nav-right {
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+    ul {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+
+      li {
+        margin-right: 19px;
+        &:last-of-type {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+/*-----------------------------------------------
+    Main (for both Desktop & Mobile) 
+------------------------------------------------*/
+
+.main {
+  padding: 66px 0px 147px 0px;
+  @media screen and (max-width: 1200px) {
+    padding: 9px 0px 147px 0px;
+  }
+  @media screen and (max-width: 576px) {
+    padding: 9px 0px 280px 0px;
+  }
+
+  /* Main Heading */
+  .main-heading {
+    h1 {
+      font-family: "Restora";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 140px;
+      line-height: 158px;
+      color: #ffffff;
+      text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      span {
+        font-family: "Restora";
+        font-style: italic;
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      h1 {
+        font-size: 104px;
+        line-height: 120px;
+        span {
+          &.life {
+            display: block;
+            font-style: normal;
+            margin-top: 20px;
+          }
+          &.more {
+            display: block;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      h1 {
+        font-weight: 300;
+        font-size: 84px;
+        line-height: 90px;
+      }
+    }
+    @media screen and (max-width: 394px) {
+      h1 {
+        font-weight: 300;
+        font-size: 74px;
+        line-height: 80px;
+      }
+    }
+  }
+
+  /* Main Paragraph */
+  .main-paragraph {
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+    @media screen and (max-width: 1200px) {
+      p {
+        font-size: 18px;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      p {
+        br {
+          display: none;
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  /* Subscribe Newsletter */
+  .subscribe-newsletter {
+    position: relative;
+    width: fit-content;
+    margin: 44px 0px 73px 0px;
+    input[type="submit"] {
+      display: block;
+      width: 451px;
+      height: 60px;
+      border: 2px solid #ffffff;
+      background: transparent;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 180px;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 32px;
+      text-align: left;
+      padding-left: 73px;
+    }
+    .go {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      cursor: pointer;
+      top: 7px;
+      right: 8px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    @media screen and (max-width: 992px) {
+      width: fit-content;
+      margin: 0 auto;
+      margin-top: 44px;
+      margin-bottom: 44px;
+    }
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      input[type="submit"] {
+        width: 100%;
+        text-align: center;
+        height: 50px;
+        padding: 0px 29px 0px 0px;
+        font-size: 11.9202px;
+        line-height: 24px;
+      }
+      .go {
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        right: 5px;
+      }
+    }
+    @media screen and (max-width: 394px) {
+      margin-top: 34px;
+      margin-bottom: 34px;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<  */
