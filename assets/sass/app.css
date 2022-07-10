@@ -25,6 +25,7 @@ body {
   background: linear-gradient(180deg, #5486d2 0%, #5b6ed7 50%, #a6a4ed 100%);
   background-repeat: no-repeat;
   font-family: "Roboto";
+  overflow-x: hidden;
 }
 
 .m-block {
@@ -49,11 +50,13 @@ body {
   background-image: url(../images/kenny/kenny-d.png), url(../images/bg/gradient.png);
   background-position: right bottom, left bottom;
   background-repeat: no-repeat, no-repeat;
+  overflow: hidden;
+  height: 100vh;
 }
 
-@media screen and (min-height: 788px) {
+@media screen and (max-width: 1536px) {
   .container {
-    height: 100vh;
+    background-size: 420px, auto;
   }
 }
 
@@ -63,15 +66,28 @@ body {
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .container {
-    height: unset;
+    background-size: 470px, auto;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1439px) {
   .container {
-    background-size: auto, 470px;
+    background-size: 380px, auto;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-height: 900px) {
+  .container {
+    background-size: 600px, auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: unset;
+    background-size: 416px, auto;
   }
 }
 
@@ -134,9 +150,15 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .navigations {
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .navigations {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
   .navigations li {
     font-size: 10px;
@@ -155,6 +177,16 @@ body {
   }
 }
 
+@media screen and (max-width: 374px) {
+  .navigations li:nth-of-type(3):after {
+    content: "•";
+    margin-left: 6px;
+  }
+  .navigations li:nth-of-type(4) {
+    display: none;
+  }
+}
+
 /*-----------------------------------------------
     Navbar
 ------------------------------------------------*/
@@ -169,12 +201,6 @@ nav {
 }
 
 @media screen and (max-width: 576px) {
-  nav {
-    padding: 60px 0px 30px 0px;
-  }
-}
-
-@media screen and (max-width: 416px) {
   nav {
     padding: 40px 0px 30px 0px;
   }
@@ -261,6 +287,12 @@ nav .nav-right ul li:last-of-type {
   /* Subscribe Newsletter */
 }
 
+@media screen and (max-width: 1536px) {
+  .main {
+    padding: 26px 0px 147px 0px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .main {
     padding: 9px 0px 147px 0px;
@@ -269,7 +301,7 @@ nav .nav-right ul li:last-of-type {
 
 @media screen and (max-width: 576px) {
   .main {
-    padding: 9px 0px 280px 0px;
+    padding: 0px 0px 245px 0px;
   }
 }
 
@@ -277,8 +309,8 @@ nav .nav-right ul li:last-of-type {
   font-family: "Restora";
   font-style: normal;
   font-weight: 300;
-  font-size: 140px;
-  line-height: 158px;
+  font-size: 7.3vw;
+  line-height: 8.1vw;
   color: #ffffff;
   text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
@@ -288,11 +320,14 @@ nav .nav-right ul li:last-of-type {
   font-style: italic;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1536px) {
   .main .main-heading h1 {
-    font-size: 104px;
-    line-height: 120px;
+    font-size: 94px;
+    line-height: 110px;
   }
+}
+
+@media screen and (max-width: 992px) {
   .main .main-heading h1 span.life {
     display: block;
     font-style: normal;
@@ -306,7 +341,6 @@ nav .nav-right ul li:last-of-type {
 
 @media screen and (max-width: 767px) {
   .main .main-heading h1 {
-    font-weight: 300;
     font-size: 84px;
     line-height: 90px;
   }
@@ -314,9 +348,15 @@ nav .nav-right ul li:last-of-type {
 
 @media screen and (max-width: 394px) {
   .main .main-heading h1 {
-    font-weight: 300;
     font-size: 74px;
     line-height: 80px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .main .main-heading h1 {
+    font-size: 64px;
+    line-height: 65px;
   }
 }
 
@@ -347,52 +387,184 @@ nav .nav-right ul li:last-of-type {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .main .main-paragraph p {
+    line-height: 28px;
+  }
+}
+
+.main .mce_inline_error {
+  background: transparent !important;
+  margin: 0 !important;
+  margin-top: 10px !important;
+}
+
 .main .subscribe-newsletter {
   position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 44px 0px 73px 0px;
+  margin: 2.33vw 0px 3.88vw 0px;
 }
 
-.main .subscribe-newsletter input[type="submit"] {
+.main .subscribe-newsletter input,
+.main .subscribe-newsletter button {
+  border: none;
+  outline: none;
+}
+
+.main .subscribe-newsletter input {
   display: block;
   width: 451px;
-  height: 60px;
+  -webkit-transition: width 400ms ease-in-out;
+  transition: width 400ms ease-in-out;
+  height: 56px;
   border: 2px solid #ffffff;
   background: transparent;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.116);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.116);
   border-radius: 180px;
-  font-style: normal;
-  font-weight: bold;
   text-transform: uppercase;
-  cursor: pointer;
   font-size: 16px;
-  line-height: 32px;
-  text-align: left;
-  padding-left: 73px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  padding-right: 40px;
 }
 
-.main .subscribe-newsletter .go {
-  width: 46px;
-  height: 46px;
+.main .subscribe-newsletter input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.main .subscribe-newsletter input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.main .subscribe-newsletter input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.main .subscribe-newsletter input::placeholder {
+  color: #fff;
+}
+
+.main .subscribe-newsletter input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter input:focus::placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter button {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #fff;
   position: absolute;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
-  top: 7px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.main .subscribe-newsletter .go svg {
+.main .subscribe-newsletter button svg {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.main .subscribe-newsletter button svg path {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .subscribe-newsletter button:hover {
+  -webkit-transform: scale(1.09);
+          transform: scale(1.09);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .subscribe-newsletter button:hover svg path {
+  stroke-width: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .subscribe-newsletter .success-message {
+  position: absolute;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 90px;
+  visibility: hidden;
+  font-size: 18px;
+  color: #fff;
+}
+
+.main .subscribe-newsletter.success .success-message {
+  visibility: visible;
+  -webkit-animation: moveupwards 1.4s;
+          animation: moveupwards 1.4s;
+}
+
+.main .subscribe-newsletter.success input,
+.main .subscribe-newsletter.success button {
+  pointer-events: none;
+  cursor: default;
+}
+
+.main .subscribe-newsletter.success input {
+  width: 56px;
+  padding: 0;
+}
+
+.main .subscribe-newsletter.success input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter.success input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter.success input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter.success input::placeholder {
+  color: transparent;
+}
+
+.main .subscribe-newsletter.success button {
+  width: 48px;
+  height: 48px;
+  top: 6px;
+  right: 6px;
+}
+
+@media screen and (max-width: 1536px) {
+  .main .subscribe-newsletter {
+    margin: 40px 0px 43px 0px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -406,30 +578,63 @@ nav .nav-right ul li:last-of-type {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .main .subscribe-newsletter {
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .main .subscribe-newsletter {
     width: 100%;
   }
-  .main .subscribe-newsletter input[type="submit"] {
-    width: 100%;
+  .main .subscribe-newsletter .success-message {
+    display: none;
+  }
+  .main .subscribe-newsletter input {
+    width: calc(100% - 29px);
     text-align: center;
-    height: 50px;
+    height: 48px;
     padding: 0px 29px 0px 0px;
     font-size: 11.9202px;
     line-height: 24px;
   }
-  .main .subscribe-newsletter .go {
-    width: 40px;
-    height: 40px;
-    top: 5px;
-    right: 5px;
+  .main .subscribe-newsletter button {
+    width: 38px;
+    height: 38px;
+    top: 7px;
+    right: 3px;
   }
 }
 
-@media screen and (max-width: 394px) {
-  .main .subscribe-newsletter {
-    margin-top: 34px;
-    margin-bottom: 34px;
+@-webkit-keyframes moveupwards {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  50% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+@keyframes moveupwards {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  50% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
   }
 }
 
