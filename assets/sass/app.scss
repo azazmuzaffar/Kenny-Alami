@@ -416,6 +416,16 @@ nav {
         }
       }
     }
+    #go,
+    #check {
+      transition: 0.5;
+    }
+    #check {
+      path {
+        fill: transparent;
+        stroke: transparent;
+      }
+    }
     &.success {
       .success-message {
         visibility: visible;
@@ -440,6 +450,18 @@ nav {
         height: 48px;
         top: 6px;
         right: 6px;
+      }
+      #go {
+        path {
+          fill: transparent;
+          stroke: transparent;
+        }
+      }
+      #check {
+        path {
+          fill: #6173d8;
+          stroke: #6173d8;
+        }
       }
     }
     @media screen and (max-width: 1536px) {

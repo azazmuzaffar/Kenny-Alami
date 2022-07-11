@@ -565,6 +565,17 @@ nav .nav-right ul li:last-of-type {
   transition: 2s;
 }
 
+.main .subscribe-newsletter #go,
+.main .subscribe-newsletter #check {
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+.main .subscribe-newsletter #check path {
+  fill: transparent;
+  stroke: transparent;
+}
+
 .main .subscribe-newsletter.success .success-message {
   visibility: visible;
   -webkit-animation: moveupwards 1.4s;
@@ -612,6 +623,16 @@ nav .nav-right ul li:last-of-type {
   height: 48px;
   top: 6px;
   right: 6px;
+}
+
+.main .subscribe-newsletter.success #go path {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.main .subscribe-newsletter.success #check path {
+  fill: #6173d8;
+  stroke: #6173d8;
 }
 
 @media screen and (max-width: 1536px) {
